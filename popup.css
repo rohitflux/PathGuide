@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #202033;
+  background: #ffffff;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #5b38d5;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 21px;
+}
+
+.header p {
+  margin: 0;
+  color: #69697b;
+  font-size: 13px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c9c9d8;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 3px solid #d8ceff;
+  border-color: #5b38d5;
+}
+
+.hint {
+  color: #69697b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 9px;
+  background: #5b38d5;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4626b7;
+}
+
+button:focus-visible {
+  outline: 3px solid #9c86ff;
+  outline-offset: 3px;
+}
+
+#status {
+  min-height: 34px;
+  margin: 14px 0 4px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+footer {
+  margin-top: 14px;
+  color: #77778a;
+  font-size: 11px;
+  text-align: center;
+}

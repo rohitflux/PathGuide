@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathGuide Practice Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">CampusConnect</div>
+
+    <nav aria-label="Main navigation">
+      <button id="nav-dashboard">Dashboard</button>
+      <button id="random-profile-button" aria-label="Profile Settings">
+        My Account
+      </button>
+      <button id="nav-courses">Courses</button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section id="dashboard-section" class="page-section">
+      <h1>Welcome to CampusConnect</h1>
+      <p>Your student portal, all in one place.</p>
+
+      <div class="card">
+        <h2>Getting started</h2>
+        <p>
+          Use the navigation menu to manage your profile
+          or find your course assignments.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="profile-section"
+      class="page-section"
+      hidden
+    >
+      <h1>Profile Settings</h1>
+      <p>Manage your personal information here.</p>
+
+      <div class="card">
+        <h2>Your profile</h2>
+        <p>Keep your student information up to date.</p>
+
+        <button id="completely-different-id" class="primary">
+          Edit Profile
+        </button>
+      </div>
+
+      <form id="profile-form" class="card" hidden>
+        <label for="profile-name">Your name</label>
+
+        <input
+          id="profile-name"
+          type="text"
+          value="Student"
+          autocomplete="name"
+        >
+
+        <button id="save-my-details" type="submit" class="primary">
+          Save Changes
+        </button>
+
+        <p id="profile-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section
+      id="courses-section"
+      class="page-section"
+      hidden
+    >
+      <h1>My Courses</h1>
+      <p>Access your course material and assignments.</p>
+
+      <div class="card">
+        <h2>Introduction to Programming</h2>
+        <p>Course code: CS101</p>
+
+        <button id="assignment-link" class="primary">
+          View Assignments
+        </button>
+      </div>
+    </section>
+
+    <section
+      id="assignments-section"
+      class="page-section"
+      hidden
+    >
+      <h1>Course Assignments</h1>
+      <p>Here are your current assignments.</p>
+
+      <div class="card">
+        <h2>Assignment 1</h2>
+        <p>Introduction to programming concepts.</p>
+        <p class="status">Status: Pending</p>
+      </div>
+    </section>
+  </main>
+
+  
+<script>
+  const sections = [
+    "dashboard-section",
+    "profile-section",
+    "courses-section",
+    "assignments-section"
+  ];
+
+  function showSection(sectionId) {
+    sections.forEach((id) => {
+      document.getElementById(id).hidden = id !== sectionId;
+    });
+  }
+
+  // Dashboard navigation
+  document.getElementById("nav-dashboard")
+    .addEventListener("click", () => {
+      showSection("dashboard-section");
+    });
+
+  // Profile Settings navigation
+  document.getElementById("random-profile-button")
+    .addEventListener("click", () => {
+      showSection("profile-section");
+    });
+
+  // Courses navigation
+  document.getElementById("nav-courses")
+    .addEventListener("click", () => {
+      showSection("courses-section");
+    });
+
+  // Edit Profile
+  document.getElementById("completely-different-id")
+    .addEventListener("click", () => {
+      document.getElementById("profile-form").hidden = false;
+      document.getElementById("profile-name").focus();
+    });
+
+  // Save Profile
+  document.getElementById("profile-form")
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("profile-name")
+        .value.trim();
+
+      if (!name) {
+        document.getElementById("profile-status").textContent =
+          "Please enter your name.";
+        return;
+      }
+
+      document.getElementById("profile-status").textContent =
+        "Profile updated successfully for " + name + "!";
+    });
+
+  // View Assignments
+  document.getElementById("assignment-link")
+    .addEventListener("click", () => {
+      showSection("assignments-section");
+    });
+</script>
+</body>
+</html>

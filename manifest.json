@@ -1,0 +1,24 @@
+
+{
+  "manifest_version": 3,
+  "name": "PathGuide",
+  "version": "0.2.0",
+  "description": "Step-by-step digital navigation assistant",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5000/*"
+  ],
+  "action": {
+    "default_title": "Open PathGuide",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["file:///*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

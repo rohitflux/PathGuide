@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathGuide</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="logo">P</div>
+      <div>
+        <h1>PathGuide</h1>
+        <p>Your digital guide</p>
+      </div>
+    </header>
+
+    <label for="goal">What would you like to do?</label>
+
+    <textarea
+      id="goal"
+      rows="3"
+      placeholder="Example: Help me change my profile name"
+    ></textarea>
+
+    <p class="hint">
+      Try a profile task or finding course assignments.
+    </p>
+
+    <button id="startButton" type="button">
+      Start guiding me
+    </button>
+
+    <p id="status" role="status" aria-live="polite">
+      Ready to help.
+    </p>
+
+    <footer>
+      PathGuide v0.1 · Demo mode
+    </footer>
+  </main>
+</body>
+</html>
